@@ -30,10 +30,10 @@
 
     <?php
 
-    echo '<pre>';
-    print_r($_SESSION);
-    echo '</pre>';
-    exit;
+//    echo '<pre>';
+//    print_r($_SESSION);
+//    echo '</pre>';
+//    exit;
 
 
     ?>

@@ -252,48 +252,59 @@
                     <div class="frame-container">
 
                         <h3 class="frame-title"><?php echo $this->lang->line('step_three_title'); ?></h3>
+<?php
 
-        <div class="frame-content row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="form-group">
-                    <label for="first-name" class="control-label"><?php echo $this->lang->line('first_name'); ?> *</label>
-                    <input type="text" id="first-name" value="<?= ($this->session->userdata('user_email') ? $this->session->userdata('user_email'): 'salman' )?>" class="required form-control" maxlength="100" />
-                </div>
-                <div class="form-group">
-                    <label for="last-name" class="control-label"><?php echo $this->lang->line('last_name'); ?> *</label>
-                    <input type="text" id="last-name" class="required form-control" maxlength="250" />
-                </div>
-                <div class="form-group">
-                    <label for="email" class="control-label"><?php echo $this->lang->line('email'); ?> *</label>
-                    <input type="text" id="email" class="required form-control" maxlength="250" />
-                </div>
-                <div class="form-group">
-                    <label for="phone-number" class="control-label"><?php echo $this->lang->line('phone_number'); ?> *</label>
-                    <input type="text" id="phone-number" class="required form-control" maxlength="60" />
-                </div>
+if($this->session->userdata('user_email')) {
+
+    ?>
+    <div class="frame-content row">
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <label for="first-name" class="control-label"><?php echo $this->lang->line('first_name'); ?> *</label>
+                <input type="text" id="first-name" class="required form-control" maxlength="100"/>
             </div>
+            <div class="form-group">
+                <label for="last-name" class="control-label"><?php echo $this->lang->line('last_name'); ?> *</label>
+                <input type="text" id="last-name" class="required form-control" maxlength="250"/>
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label"><?php echo $this->lang->line('email'); ?> *</label>
+                <input type="text" id="email" class="required form-control" maxlength="250"/>
+            </div>
+            <div class="form-group">
+                <label for="phone-number" class="control-label"><?php echo $this->lang->line('phone_number'); ?>
+                    *</label>
+                <input type="text" id="phone-number" class="required form-control" maxlength="60"/>
+            </div>
+        </div>
 
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="form-group">
-                                    <label for="address" class="control-label"><?php echo $this->lang->line('address'); ?></label>
-                                    <input type="text" id="address" class="form-control" maxlength="250" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="city" class="control-label"><?php echo $this->lang->line('city'); ?></label>
-                                    <input type="text" id="city" class="form-control" maxlength="120" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="zip-code" class="control-label"><?php echo $this->lang->line('zip_code'); ?></label>
-                                    <input type="text" id="zip-code" class="form-control" maxlength="120" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="notes" class="control-label"><?php echo $this->lang->line('notes'); ?></label>
-                                    <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
-                                </div>
-                            </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <label for="address" class="control-label"><?php echo $this->lang->line('address'); ?></label>
+                <input type="text" id="address" class="form-control" maxlength="250"/>
+            </div>
+            <div class="form-group">
+                <label for="city" class="control-label"><?php echo $this->lang->line('city'); ?></label>
+                <input type="text" id="city" class="form-control" maxlength="120"/>
+            </div>
+            <div class="form-group">
+                <label for="zip-code" class="control-label"><?php echo $this->lang->line('zip_code'); ?></label>
+                <input type="text" id="zip-code" class="form-control" maxlength="120"/>
+            </div>
+            <div class="form-group">
+                <label for="notes" class="control-label"><?php echo $this->lang->line('notes'); ?></label>
+                <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
 
-                            <em id="form-message" class="text-danger"><?php echo $this->lang->line('fields_are_required'); ?></em>
-                        </div>
+        <em id="form-message" class="text-danger"><?php echo $this->lang->line('fields_are_required'); ?></em>
+    </div>
+
+    <?php
+
+}
+
+                        ?>
                     </div>
 
                     <div class="command-buttons">
