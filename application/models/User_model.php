@@ -105,11 +105,18 @@ class User_Model extends CI_Model {
         return ($user_data) ? $user_data : NULL;
     }
 
+    public function get_user_nam_pas($username, $password) {
+        $this->load->helper('general');
+
+$query = "select * from ea_users where email='$username'  and password = '$password'";
+        $user_data = $this->db->query($query)->row_array();
+
+        return ($user_data) ? $user_data : NULL;
+    }
+
     /**
      * Get the given user's display name (first + last name).
-     *
-     * @param numeric $user_id The given user record id.
-     *
+     *     * @param numeric $user_id The given user record id.
      * @return string Returns the user display name.
      */
     public function get_user_display_name($user_id) {

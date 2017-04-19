@@ -12,10 +12,12 @@ class Student extends CI_Controller {
 
     }
 
+
+    public function checkUser(){
+
+    }
+
     public function index(){
-
-
-
         $data = array();
         $data['title'] = 'Sign In';
         $data['base_url'] = $this->config->item('base_url');
@@ -46,6 +48,7 @@ class Student extends CI_Controller {
 if($this->session->userdata('user_id')){
     if(!empty($this->student_model->profile($this->session->userdata('user_id')))){
         $data['profile'] = $this->student_model->profile($this->session->userdata('user_id'));
+        $data['appointments'] = $this->student_model->appointments($this->session->userdata('user_id'));
         $this->load->view('includes/header', $data);
         $this->load->view('student/profile', $data);
         $this->load->view('includes/footer', $data);
@@ -126,7 +129,7 @@ if($this->session->userdata('user_id')){
                 // Create session
                 $user_data = array(
                     'user_id' => $user_id,
-                    'username' => $username,
+                    'user_email' => $username,
                     'logged_in' => true
                 );
 

@@ -18,12 +18,12 @@
         // Log user in
         public function login($username, $password){
             // Validate
-            $this->db->where('user_name', $username);
-            $this->db->where('user_password', $password);
+            $this->db->where('email', $username);
+            $this->db->where('password', $password);
 
-            $result = $this->db->get('students');
+            $result = $this->db->get('ea_users');
             if($result->num_rows() == 1){
-                return $result->row(0)->user_id;
+                return $result->row(0)->id;
             } else {
                 return false;
             }
@@ -31,7 +31,7 @@
 
         // Check username exists
         public function check_username_exists($username){
-            $query = $this->db->get_where('students', array('user_name' => $username));
+            $query = $this->db->get_where('ea_users', array('email' => $username));
             if(empty($query->row_array())){
                 return true;
             } else {
@@ -41,7 +41,7 @@
 
         // Check email exists
         public function check_email_exists($email){
-            $query = $this->db->get_where('students', array('user_email' => $email));
+            $query = $this->db->get_where('ea_users', array('email' => $email));
             if(empty($query->row_array())){
                 return true;
             } else {
@@ -50,12 +50,22 @@
         }
 
         public function profile($id){
-            $query = $this->db->get_where('students', array('user_id' => $id))->row();
+            $query = $this->db->get_where('ea_users', array('id' => $id))->row();
+
+//            echo $this->db->last_query();
+//            exit;
             if(!empty($query)){
+
                 return $query;
             } else {
                 return false;
             }
 
         }
+
+        public function appointments($id){
+            $query = "SELECT * FROM `ea_appointments`  LEFT JOIN `ea_users` on ea_users.id = ea_appointments.id_users_provider WHERE `id_users_customer` =".$id;
+            return $result = $this->db->query($query)->result();
+        }
+
     }

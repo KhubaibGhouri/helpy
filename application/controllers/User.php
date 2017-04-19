@@ -131,6 +131,31 @@ class User extends CI_Controller {
         }
     }
 
+
+
+    public function get_user_nam_pas() {
+        try {
+            if (!isset($_POST['username']) || !isset($_POST['password'])) {
+                throw new Exception('Invalid credentials given!');
+            }
+
+            $this->load->model('user_model');
+            $user_data = $this->user_model->get_user_nam_pas($_POST['username'], $_POST['password']);
+
+            if ($user_data) {
+
+                echo json_encode($user_data);
+            } else {
+                echo json_encode(AJAX_FAILURE);
+            }
+
+        } catch(Exception $exc) {
+            echo json_encode(array(
+                'exceptions' => array(exceptionToJavaScript($exc))
+            ));
+        }
+    }
+
     /**
      * Regenerate a new password for the current user, only if the username and
      * email address given correspond to an existing user in db.
