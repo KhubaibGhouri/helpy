@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "appointments";
+$route['default_controller'] = "user/login";
+// $route['default_controller'] = "appointments";
 $route['404_override'] = 'errors/error404';
 
 
@@ -60,7 +61,8 @@ $resources = [
     'categories',
     'admins',
     'providers', 
-    'secretaries'
+    'secretaries',
+    'login'
 ];
 
 foreach($resources as $resource) {

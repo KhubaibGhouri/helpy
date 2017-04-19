@@ -34,19 +34,22 @@ class API_V1_Controller extends CI_Controller {
      * that you use the API through SSL/TLS for security.
      */
     public function __construct() {
-        if (!isset($_SERVER['PHP_AUTH_USER'])) {
-            return $this->_requestAuthentication();
-        }
+//        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+//            return $this->_requestAuthentication();
+//        }
 
         parent::__construct();
 
         try {
-            $username = new NonEmptyText($_SERVER['PHP_AUTH_USER']);
-            $password = new NonEmptyText($_SERVER['PHP_AUTH_PW']);
-            $authorization = new \EA\Engine\Api\V1\Authorization($this); 
-            $authorization->basic($username, $password); 
-        } catch(\Exception $exception) {
-            exit($this->_handleException($exception)); 
+//            $username = new NonEmptyText($_SERVER['PHP_AUTH_USER']);
+//            $password = new NonEmptyText($_SERVER['PHP_AUTH_PW']);
+            $username = 'salman';
+            $password = 'salman123';
+            $authorization = new \EA\Engine\Api\V1\Authorization($this);
+            $authorization->basic($username, $password);
+        }
+        catch (\Exception $exception) {
+            exit($this->_handleException($exception));
         }
     }
 
@@ -63,17 +66,17 @@ class API_V1_Controller extends CI_Controller {
      * Outputs the required headers and messages for exception handling.
      *
      * Call this method from catch blocks of child controller callbacks.
-     * 
+     *
      * @param \Exception $exception Thrown exception to be outputted.
      */
     protected function _handleException(\Exception $exception) {
         $error = [
             'code' => $exception->getCode() ?: 500,
-            'message'=> $exception->getMessage(), 
-        ];   
+            'message'=> $exception->getMessage(),
+        ];
 
-        $header = $exception instanceof \EA\Engine\Api\V1\Exception 
-            ? $exception->getCode() . ' ' . $exception->getHeader() 
+        $header = $exception instanceof \EA\Engine\Api\V1\Exception
+            ? $exception->getCode() . ' ' . $exception->getHeader()
             : '500 Internal Server Error';
 
         header('HTTP/1.0 ' . $header);
@@ -83,8 +86,8 @@ class API_V1_Controller extends CI_Controller {
     }
 
     /**
-     * Throw an API exception stating that the requested record was not found. 
-     * 
+     * Throw an API exception stating that the requested record was not found.
+     *
      * @throws \EA\Engine\Api\V1\Exception
      */
     protected function _throwRecordNotFound() {

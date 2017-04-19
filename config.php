@@ -30,7 +30,7 @@ class Config {
     // GENERAL SETTINGS
     // ------------------------------------------------------------------------
 
-    const BASE_URL      = 'http://localhost/easyappointments/';
+    const BASE_URL      = 'http://localhost/helpy/';
     const LANGUAGE      = 'english';
     const DEBUG_MODE    = true;
 
@@ -39,7 +39,7 @@ class Config {
     // ------------------------------------------------------------------------
 
     const DB_HOST       = 'localhost';
-    const DB_NAME       = 'easyappointments';
+    const DB_NAME       = 'muhasdqu_helpy';
     const DB_USERNAME   = 'root';
     const DB_PASSWORD   = '';
 
