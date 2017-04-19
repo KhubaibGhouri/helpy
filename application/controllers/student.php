@@ -65,19 +65,25 @@ if($this->session->userdata('user_id')){
     }
 
 
-    public function register(){
+    public function register()
+    {
         $data = array();
         $data['title'] = 'Sign Up';
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
-        $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
+
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
+
+
+        $this->form_validation->set_rules('first_name', 'First Name', 'required');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
 
-        if($this->form_validation->run() === FALSE){
-
+        if ($this->form_validation->run() === FALSE) {
             $this->load->view('includes/header', $data);
             $this->load->view('student/register', $data);
             $this->load->view('includes/footer', $data);
@@ -85,18 +91,39 @@ if($this->session->userdata('user_id')){
             // Encrypt password
             $enc_password = md5($this->input->post('password'));
 
-            $this->student_model->register($enc_password);
+            $user_id = $this->student_model->register($enc_password);
 
             // Set message
-            $this->session->set_flashdata('user_registered', 'You are now registered and can log in');
+            $this->session->set_flashdata('user_registered', 'You are now registered');
 
-            redirect('student/profile');
+//            echo $user_id;
+
+            if ($user_id) {
+                // Create session
+                $user_data = array(
+                    'first_name' => $this->input->post('first_name'),
+                    'last_name' => $this->input->post('last_name'),
+                    'useremail' => $this->input->post('email'),
+                    'address' => $this->input->post('address'),
+                    'phone_number' => $this->input->post('username'),
+                    'zip_code' => $this->input->post('zipcode'),
+                    'notes' => $this->input->post('notes'),
+                    'user_id' => $user_id,
+                    'logged_in' => true
+                );
+
+                $this->session->set_userdata($user_data);
+//echo '<pre>';
+//print_r($_SESSION);
+//echo '</pre>';
+//exit;
+
+                redirect('student/profile');
+            }
         }
+
+
     }
-
-
-
-
 
 
     // Log in user
@@ -129,7 +156,7 @@ if($this->session->userdata('user_id')){
                 // Create session
                 $user_data = array(
                     'user_id' => $user_id,
-                    'user_email' => $username,
+                    'useremail' => $username,
                     'logged_in' => true
                 );
 
@@ -154,6 +181,7 @@ if($this->session->userdata('user_id')){
         $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('username');
+        $this->session->unset_userdata('useremail');
 
         // Set message
         $this->session->set_flashdata('user_loggedout', 'You are now logged out');

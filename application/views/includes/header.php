@@ -92,13 +92,27 @@
 
         <div id="header-menu" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-               
+               <?php if ($this->session->userdata('useremail')){?>
                 <li class="active">
-                   <a href="" class="menu-item">
-                   	Home
-                   </a>
+                    <a href="<?= $base_url; ?>" class="menu-item">
+                        Home
+                    </a>
                 </li>
 
+                <li>
+                    <a href="<?= $base_url?>appointments" class="menu-item">
+                        Add Appoinments
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= $base_url?>student/logout" class="menu-item">
+                        Logout
+                    </a>
+                </li>
+<?php }else {
+//                   echo '<pre>';
+//                   print_r($_SESSION);
+               }?>
             </ul>
         </div>
     </div>

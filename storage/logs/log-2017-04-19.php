@@ -3847,3 +3847,97 @@ ERROR - 2017-04-19 16:07:19 --> #0 C:\xampp\htdocs\helpy\application\controllers
 #3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
 #4 {main}
 ERROR - 2017-04-19 16:12:10 --> Severity: Parsing Error --> syntax error, unexpected ''<pre>'' (T_CONSTANT_ENCAPSED_STRING) C:\xampp\htdocs\helpy\application\views\student\profile.php 33
+ERROR - 2017-04-19 16:47:26 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\xampp\htdocs\helpy\application\views\appointments\book.php 260
+ERROR - 2017-04-19 16:48:27 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\xampp\htdocs\helpy\application\views\appointments\book.php 260
+ERROR - 2017-04-19 16:48:47 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\xampp\htdocs\helpy\application\views\appointments\book.php 260
+ERROR - 2017-04-19 16:49:23 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\xampp\htdocs\helpy\application\views\appointments\book.php 260
+ERROR - 2017-04-19 16:57:41 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 16:57:41 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 17:11:26 --> Severity: Parsing Error --> syntax error, unexpected '$this' (T_VARIABLE) C:\xampp\htdocs\helpy\application\controllers\student.php 53
+ERROR - 2017-04-19 17:43:55 --> Severity: Parsing Error --> syntax error, unexpected ''zip_code'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' C:\xampp\htdocs\helpy\application\controllers\student.php 101
+ERROR - 2017-04-19 17:45:49 --> Severity: Parsing Error --> syntax error, unexpected ''zip_code'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' C:\xampp\htdocs\helpy\application\controllers\student.php 101
+ERROR - 2017-04-19 17:46:06 --> Severity: Parsing Error --> syntax error, unexpected 'public' (T_PUBLIC) C:\xampp\htdocs\helpy\application\controllers\student.php 120
+ERROR - 2017-04-19 17:50:04 --> Query error: Unknown column 'first_name' in 'field list' - Invalid query: INSERT INTO `students` (`first_name`, `last_name`, `email`, `address`, `phone_number`, `user_password`, `zip_code`, `notes`) VALUES (NULL, NULL, 'asjkfdndf@sdfs.com', 'sdfsdfkn', NULL, '202cb962ac59075b964b07152d234b70', '234234', NULL)
+ERROR - 2017-04-19 17:50:58 --> Query error: Unknown column 'user_password' in 'field list' - Invalid query: INSERT INTO `ea_users` (`first_name`, `last_name`, `email`, `address`, `phone_number`, `user_password`, `zip_code`, `notes`) VALUES (NULL, NULL, 'asjkfdndf@sdfs.com', 'sdfsdfkn', NULL, '202cb962ac59075b964b07152d234b70', '234234', NULL)
+ERROR - 2017-04-19 17:51:19 --> Query error: Cannot add or update a child row: a foreign key constraint fails (`muhasdqu_helpy`.`ea_users`, CONSTRAINT `ea_users_ibfk_1` FOREIGN KEY (`id_roles`) REFERENCES `ea_roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) - Invalid query: INSERT INTO `ea_users` (`first_name`, `last_name`, `email`, `address`, `phone_number`, `password`, `zip_code`, `notes`) VALUES (NULL, NULL, 'asjkfdndf@sdfs.com', 'sdfsdfkn', NULL, '202cb962ac59075b964b07152d234b70', '234234', NULL)
+ERROR - 2017-04-19 18:15:06 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 18:15:06 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 18:24:35 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 18:24:35 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 18:27:12 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\Appointments.php 406
+ERROR - 2017-04-19 18:27:14 --> Error refreshing the OAuth2 token, message: '{
+  "error" : "invalid_request",
+  "error_description" : "Missing required parameter: refresh_token"
+}'
+ERROR - 2017-04-19 18:27:14 --> #0 C:\xampp\htdocs\helpy\application\libraries\external\google-api-php-client\auth\Google_OAuth2.php(240): Google_OAuth2->refreshTokenRequest(Array)
+#1 C:\xampp\htdocs\helpy\application\libraries\external\google-api-php-client\Google_Client.php(315): Google_OAuth2->refreshToken(NULL)
+#2 C:\xampp\htdocs\helpy\application\libraries\Google_sync.php(116): Google_Client->refreshToken(NULL)
+#3 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(406): Google_Sync->refresh_token(NULL)
+#4 [internal function]: Appointments->ajax_register_appointment()
+#5 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2017-04-19 18:27:15 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 18:27:15 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 18:27:41 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\Appointments.php 406
+ERROR - 2017-04-19 18:27:42 --> Error refreshing the OAuth2 token, message: '{
+  "error" : "invalid_request",
+  "error_description" : "Missing required parameter: refresh_token"
+}'
+ERROR - 2017-04-19 18:27:42 --> #0 C:\xampp\htdocs\helpy\application\libraries\external\google-api-php-client\auth\Google_OAuth2.php(240): Google_OAuth2->refreshTokenRequest(Array)
+#1 C:\xampp\htdocs\helpy\application\libraries\external\google-api-php-client\Google_Client.php(315): Google_OAuth2->refreshToken(NULL)
+#2 C:\xampp\htdocs\helpy\application\libraries\Google_sync.php(116): Google_Client->refreshToken(NULL)
+#3 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(406): Google_Sync->refresh_token(NULL)
+#4 [internal function]: Appointments->ajax_register_appointment()
+#5 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2017-04-19 18:27:43 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 18:27:43 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 18:28:02 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\Appointments.php 406
+ERROR - 2017-04-19 18:28:03 --> Error refreshing the OAuth2 token, message: '{
+  "error" : "invalid_request",
+  "error_description" : "Missing required parameter: refresh_token"
+}'
+ERROR - 2017-04-19 18:28:03 --> #0 C:\xampp\htdocs\helpy\application\libraries\external\google-api-php-client\auth\Google_OAuth2.php(240): Google_OAuth2->refreshTokenRequest(Array)
+#1 C:\xampp\htdocs\helpy\application\libraries\external\google-api-php-client\Google_Client.php(315): Google_OAuth2->refreshToken(NULL)
+#2 C:\xampp\htdocs\helpy\application\libraries\Google_sync.php(116): Google_Client->refreshToken(NULL)
+#3 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(406): Google_Sync->refresh_token(NULL)
+#4 [internal function]: Appointments->ajax_register_appointment()
+#5 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2017-04-19 18:28:04 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 18:28:04 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 18:28:26 --> Email could not been sent. Mailer Error (Line 137): Could not instantiate mail function.
+ERROR - 2017-04-19 18:28:26 --> #0 C:\xampp\htdocs\helpy\application\controllers\Appointments.php(455): EA\Engine\Notifications\Email->sendAppointmentDetails(Array, Array, Array, Array, Array, Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Text), Object(EA\Engine\Types\Url), Object(EA\Engine\Types\Email))
+#1 [internal function]: Appointments->ajax_register_appointment()
+#2 C:\xampp\htdocs\helpy\system\core\CodeIgniter.php(514): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\helpy\index.php(353): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+ERROR - 2017-04-19 18:32:21 --> Severity: Parsing Error --> syntax error, unexpected '<' C:\xampp\htdocs\helpy\application\views\appointments\book_success.php 56
+ERROR - 2017-04-19 18:32:31 --> Severity: Parsing Error --> syntax error, unexpected '<' C:\xampp\htdocs\helpy\application\views\appointments\book_success.php 56

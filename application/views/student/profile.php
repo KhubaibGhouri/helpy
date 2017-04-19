@@ -20,7 +20,7 @@
     </thead>
     <tbody>
         <td><?= $profile->id ?></td>
-        <td><?= $profile->first_name . $profile->last_name ?></td>
+        <td><?= $profile->first_name . ' ' . $profile->last_name ?></td>
         <td><?= $profile->email ?></td>
         <td><?= $profile->zip_code ?></td>
         <td><?= $profile->address?></td>
@@ -31,7 +31,7 @@
     <?php
 
 //    echo '<pre>';
-//    print_r($_SESSION);
+//    print_r($appointments);
 //    echo '</pre>';
 //    exit;
 
@@ -49,33 +49,43 @@
         <th>End DateTime</th>
         <th>Notes</th>
         <th>Provider ID</th>
+        <th>Provider Status</th>
         <th>Provider Name</th>
         </thead>
         <tbody>
     <?php
 
 //    echo '<pre>';
-//    print_r($appointments);
-//    echo '<pre>';
+//    print_r($_SESSION);
+//    echo '</pre>';
+if(isset($appointments) && !empty($appointments)) {
+    foreach ($appointments as $appointment) {
+        ?>
 
-foreach($appointments as $appointment) {
-?>
 
-
-            <tr>
+        <tr>
             <td><?= $appointment->id ?></td>
-            <td> <?= date( 'd-M-Y h:i:s:a', strtotime($appointment->book_datetime) )  ?></td>
-            <td><?= date( 'd-M-Y h:i:s:a', strtotime($appointment->start_datetime) )  ?></td>
-            <td><?= date( 'd-M-Y h:i:s:a', strtotime($appointment->end_datetime) ) ?></td>
-            <td><?= $appointment->notes?></td>
-            <td><?= $appointment->id?></td>
-            <td><?= $appointment->first_name . $appointment->last_name ?></td>
-            </tr>
+            <td> <?= date('d-M-Y h:i:s:a', strtotime($appointment->book_datetime)) ?></td>
+            <td><?= date('d-M-Y h:i:s:a', strtotime($appointment->start_datetime)) ?></td>
+            <td><?= date('d-M-Y h:i:s:a', strtotime($appointment->end_datetime)) ?></td>
+            <td><?= $appointment->notes ?></td>
+            <td><?= $appointment->id ?></td>
+            <td><?= 'pending' ?></td>
+            <td><?= $appointment->first_name . ' ' . $appointment->last_name ?></td>
+        </tr>
 
+
+        <?php
+    }
+}else {
+
+    ?>
+
+    <tr><td colspan="7"><center>No data Found</center></td></tr>
 
     <?php
-    }
 
+}
 
     ?>
         </tbody>

@@ -45,11 +45,18 @@
                         echo '
                             <h3>' . $this->lang->line('appointment_registered') . '</h3>
                             <p>' . $this->lang->line('appointment_details_was_sent_to_you') . '</p>
-                            <a href="' . site_url() . '" class="btn btn-success btn-large">
+                            <a href="' . site_url() . 'appointments" class="btn btn-success btn-large">
                                 <span class="glyphicon glyphicon-calendar"></span> ' .
                                 $this->lang->line('go_to_booking_page') . '
                             </a>
                         ';
+?>
+                    OR
+                    <?php
+                    echo '
+                    <a href="' . site_url() . 'student/profile" class="btn btn-success btn-large">
+                        <span class="glyphicon glyphicon-user"></span>Go back to profile
+                    </a>';
 
                         if ($this->config->item('google_sync_feature')) {
                             echo '

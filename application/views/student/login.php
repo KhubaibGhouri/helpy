@@ -8,7 +8,7 @@
 		<div class="col-md-4 col-md-offset-4">
 			<h1 class="text-center"><?php echo $title; ?></h1>
 			<div class="form-group">
-				<input type="text" name="username" value="<?php echo set_value('username'); ?>" class="form-control" placeholder="Enter Username" required="" autofocus="">
+				<input type="text" name="username" value="<?php echo set_value('username'); ?>" class="form-control" placeholder="Enter Email" required="" autofocus="">
 
                 <?php echo form_error('username name', '<div class="error">', '</div>'); ?>
             </div>

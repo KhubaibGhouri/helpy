@@ -4,15 +4,35 @@
         public function register($enc_password){
             // User data array
             $data = array(
-                'user_full_name' => $this->input->post('name'),
-                'user_email' => $this->input->post('email'),
-                'user_name' => $this->input->post('username'),
-                'user_password	' => $enc_password,
-                'user_zipcode' => $this->input->post('zipcode')
+                'first_name' => $this->input->post('l_name'),
+                'last_name' => $this->input->post('l_name'),
+                'email' => $this->input->post('email'),
+                'address' => $this->input->post('address'),
+                'phone_number' => $this->input->post('username'),
+                'password	' => $enc_password,
+                'zip_code' => $this->input->post('zipcode'),
+                'id_roles' => '3',
+                'notes' => $this->input->post('notes')
             );
 
             // Insert user
-            return $this->db->insert('students', $data);
+            if($this->db->insert('ea_users', $data)) {
+
+
+                $this->db->where('email', $this->input->post('email'));
+                $this->db->where('password', $enc_password);
+
+                $result = $this->db->get('ea_users');
+
+
+                if ($result->num_rows() == 1) {
+                    return $result->row(0)->id;
+                } else {
+                    return false;
+                }
+            }else {
+                return false;
+            }
         }
 
         // Log user in
@@ -22,6 +42,10 @@
             $this->db->where('password', $password);
 
             $result = $this->db->get('ea_users');
+
+
+
+
             if($result->num_rows() == 1){
                 return $result->row(0)->id;
             } else {
