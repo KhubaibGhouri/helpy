@@ -215,3 +215,164 @@ ERROR - 2017-04-20 12:34:51 --> Severity: Parsing Error --> syntax error, unexpe
 ERROR - 2017-04-20 14:57:40 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): No connection could be made because the target machine actively refused it.
  C:\xampp\htdocs\helpy\system\database\drivers\mysqli\mysqli_driver.php 202
 ERROR - 2017-04-20 14:57:40 --> Unable to connect to the database
+ERROR - 2017-04-20 15:31:52 --> Severity: Parsing Error --> syntax error, unexpected ']' C:\xampp\htdocs\helpy\application\controllers\wallet.php 32
+ERROR - 2017-04-20 15:31:59 --> Severity: Notice --> Undefined variable: messages C:\xampp\htdocs\helpy\application\controllers\wallet.php 32
+ERROR - 2017-04-20 15:37:05 --> Severity: Parsing Error --> syntax error, unexpected '$resultz' (T_VARIABLE) C:\xampp\htdocs\helpy\application\models\Wallet_model.php 34
+ERROR - 2017-04-20 15:39:59 --> Severity: Notice --> Undefined variable: resultz C:\xampp\htdocs\helpy\application\models\Wallet_model.php 44
+ERROR - 2017-04-20 15:39:59 --> Severity: Error --> Call to a member function num_rows() on null C:\xampp\htdocs\helpy\application\models\Wallet_model.php 44
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 42
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_of C:\xampp\htdocs\helpy\application\views\wallet\index.php 43
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_currency C:\xampp\htdocs\helpy\application\views\wallet\index.php 44
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wallet_date C:\xampp\htdocs\helpy\application\views\wallet\index.php 45
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 42
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_of C:\xampp\htdocs\helpy\application\views\wallet\index.php 43
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_currency C:\xampp\htdocs\helpy\application\views\wallet\index.php 44
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wallet_date C:\xampp\htdocs\helpy\application\views\wallet\index.php 45
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 42
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_of C:\xampp\htdocs\helpy\application\views\wallet\index.php 43
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_currency C:\xampp\htdocs\helpy\application\views\wallet\index.php 44
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wallet_date C:\xampp\htdocs\helpy\application\views\wallet\index.php 45
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 42
+ERROR - 2017-04-20 16:23:38 --> Severity: Notice --> Undefined index: wal_of C:\xampp\htdocs\helpy\application\views\wallet\index.php 43
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: wal_currency C:\xampp\htdocs\helpy\application\views\wallet\index.php 44
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: wallet_date C:\xampp\htdocs\helpy\application\views\wallet\index.php 45
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: wal_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 42
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: wal_of C:\xampp\htdocs\helpy\application\views\wallet\index.php 43
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: wal_currency C:\xampp\htdocs\helpy\application\views\wallet\index.php 44
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: wallet_date C:\xampp\htdocs\helpy\application\views\wallet\index.php 45
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:23:39 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:23:58 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:26:42 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:27:14 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:28:08 --> Query error: Unknown column 'wal.wal_by85' in 'where clause' - Invalid query: SELECT * FROM wallet as wal LEFT JOIN ea_users u on wal.wal_of = u.id WHERE wal.wal_by85
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:28:41 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:29:06 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:30:37 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:30:37 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:30:38 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:30:38 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:30:38 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:30:38 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:30:38 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:30:38 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 82
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 83
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 84
+ERROR - 2017-04-20 16:31:25 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:38:08 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\helpy\application\models\Wallet_model.php 45
+ERROR - 2017-04-20 16:38:27 --> Severity: Error --> Call to undefined method Wallet_model::sent() C:\xampp\htdocs\helpy\application\controllers\wallet.php 36
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Use of undefined constant cur_rec - assumed 'cur_rec' C:\xampp\htdocs\helpy\application\views\wallet\index.php 22
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:39:46 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:41:09 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 85
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:41:10 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:43:19 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:43:19 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:43:19 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:43:19 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:43:19 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:43:20 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:43:20 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:43:20 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:44:00 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:44:07 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:44:07 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:44:08 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:44:08 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:44:08 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:44:08 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:44:08 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:44:08 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:45:28 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_id C:\xampp\htdocs\helpy\application\views\wallet\index.php 86
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_to C:\xampp\htdocs\helpy\application\views\wallet\index.php 87
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_messages C:\xampp\htdocs\helpy\application\views\wallet\index.php 88
+ERROR - 2017-04-20 16:46:17 --> Severity: Notice --> Undefined index: mes_created_at C:\xampp\htdocs\helpy\application\views\wallet\index.php 89
+ERROR - 2017-04-20 17:28:06 --> Severity: Notice --> Undefined variable: cur_rec_total C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:06 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:06 --> Severity: Notice --> Undefined variable: cur C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:06 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:18 --> Severity: Notice --> Undefined variable: cur_rec_total C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:18 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:18 --> Severity: Notice --> Undefined variable: cur C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:28:18 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:29:23 --> Severity: Notice --> Undefined variable: cur_rec_total C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:29:23 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:29:23 --> Severity: Notice --> Undefined variable: cur C:\xampp\htdocs\helpy\application\controllers\wallet.php 61
+ERROR - 2017-04-20 17:29:23 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\helpy\application\controllers\wallet.php 61

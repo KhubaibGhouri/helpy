@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class messages extends CI_Controller
+class wallet extends CI_Controller
 {
     /**
      * Class Constructor
@@ -27,30 +27,46 @@ class messages extends CI_Controller
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
         $data['messages'] = $this->wallet_model->get_mes();
+        $data['cur'] = $this->wallet_model->get_cur();
+        $data['cur_rec'] = $this->wallet_model->cur_rec();
+        $data['cur_rec_total'] = $this->wallet_model->cur_rec_total();
+
         $data['messages_sent'] = $this->wallet_model->sent();
         $this->load->view('includes/header', $data);
-        $this->load->view('messages/index', $data);
+        $this->load->view('wallet/index', $data);
         $this->load->view('includes/footer', $data);
 
     }
 
-    public function send($id = "") {
+    public function transfer($id = "") {
         $data = array();
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
         $this->load->view('includes/header', $data);
+
+
 
         if($id == null){
             redirect('messages');
         }else {
             $data['profile'] = $this->student_model->profile($id);
             $this->form_validation->set_rules('message', 'Type Message', 'required');
-
             if ($this->form_validation->run() === FALSE) {
-                $this->load->view('messages/to', $data);
+                $this->load->view('wallet/to', $data);
             }else {
-                if( $this->wallet_model->send_now($this->session->userdata('user_id'), $id)){
-                    redirect('messages');
+                $data['cur'] = $this->wallet_model->get_cur();
+                $data['cur_rec_total'] = $this->wallet_model->cur_rec_total();
+                $total = $data['cur_rec_total']->currency - $data['cur']->currency;
+                if($total > $this->input->post('message')){
+                    if( $this->wallet_model->send_now($this->session->userdata('user_id'), $id)){
+                        $this->session->set_flashdata('error', 'Payment Sent Successfully');
+                        redirect('wallet');
+                    }
+                }
+                else
+                {
+                    $this->session->set_flashdata('error', 'Payment could not be made due to Unsufficient Balance');
+                    redirect('wallet');
                 }
             }
         }
@@ -63,18 +79,14 @@ class messages extends CI_Controller
         $data = array();
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
-
-
         $data['messages_sent'] = $this->wallet_model->all_sent();
         $data['messages'] = $this->wallet_model->all_rec();
 
         $this->load->view('includes/header', $data);
-        $this->load->view('messages/all', $data);
+        $this->load->view('wallet/all', $data);
         $this->load->view('includes/footer', $data);
 
     }
-
-
 }
 
 

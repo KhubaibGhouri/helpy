@@ -153,6 +153,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="<?= $base_url?>wallet" class="menu-item">
+                        Wallet
+                    </a>
+                </li>
+
 
                 <?php // LOGOUT MENU ITEM
                       // ------------------------------------------------------ ?>

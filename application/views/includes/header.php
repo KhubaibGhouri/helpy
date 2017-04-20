@@ -110,6 +110,12 @@
                            Messages
                        </a>
                    </li>
+
+                   <li>
+                       <a href="<?= $base_url?>wallet" class="menu-item">
+                           Wallet
+                       </a>
+                   </li>
                 <li>
                     <a href="<?= $base_url?>student/logout" class="menu-item">
                         Logout
@@ -117,6 +123,16 @@
                 </li>
 <?php }else {
                    ?>
+                   <li>
+                       <a href="<?= $base_url?>messages" class="menu-item">
+                           Messages
+                       </a>
+                   </li>
+                   <li>
+                       <a href="<?= $base_url?>wallet" class="menu-item">
+                           Wallet
+                       </a>
+                   </li>
                    <li>
                        <a href="<?= $base_url?>backend" class="menu-item">
                            Dashboard

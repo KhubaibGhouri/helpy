@@ -71,15 +71,20 @@
 
         <br>
 
-        <a href="<?php echo site_url(); ?>" class="btn btn-success btn-large">
-            <span class="glyphicon glyphicon-calendar"></span>
-            <?php echo $this->lang->line('book_appointment_title'); ?>
-        </a>
+<!--        <a href="--><?php //echo site_url(); ?><!--" class="btn btn-success btn-large">-->
+<!--            <span class="glyphicon glyphicon-calendar"></span>-->
+<!--            --><?php //echo $this->lang->line('book_appointment_title'); ?>
+<!--        </a>-->
 
-        <a href="<?php echo site_url('backend'); ?>" class="btn btn-default btn-large">
-            <span class="glyphicon glyphicon-wrench"></span>
-            <?php echo $this->lang->line('backend_section'); ?>
-        </a>
+
+        <a href="<?= site_url()?>" class="btn btn-success btn-large">Login As Teacher</a>
+        <a href="<?= site_url()?>/student" class="btn btn-primary btn-large">Login As Student</a>
+
+
+<!--        <a href="--><?php //echo site_url('backend'); ?><!--" class="btn btn-default btn-large">-->
+<!--            <span class="glyphicon glyphicon-wrench"></span>-->
+<!--            --><?php //echo $this->lang->line('backend_section'); ?>
+<!--        </a>-->
     </div>
 </body>
 </html>

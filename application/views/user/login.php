@@ -115,7 +115,8 @@
 </head>
 <body>
     <div id="login-frame" class="frame-container">
-        <h2><?php echo $this->lang->line('backend_section'); ?></h2>
+<!--        <h2>--><?php //echo $this->lang->line('backend_section'); ?><!--</h2>-->
+        <h2>Login For Teachers</h2>
         <p><?php echo $this->lang->line('you_need_to_login'); ?></p>
         <hr>
         <div class="alert hidden"></div>
