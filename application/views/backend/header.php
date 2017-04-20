@@ -147,6 +147,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="<?= $base_url?>messages" class="menu-item">
+                        Messages
+                    </a>
+                </li>
+
+
                 <?php // LOGOUT MENU ITEM
                       // ------------------------------------------------------ ?>
                 <li>

@@ -274,14 +274,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone-number" class="control-label"><?php echo $this->lang->line('phone_number'); ?> *</label>
-                                    <input type="text" id="phone-number" class="required form-control" maxlength="60"  value="<?php if ($this->session->userdata('useremail')) {echo '1234567'; echo  $this->session->userdata('phone_number'); }else { echo '1234567'; } ?>" />
+                                    <input type="text" id="phone-number" class="required form-control" maxlength="60"  value="<?php if ($this->session->userdata('useremail')) { echo  $this->session->userdata('phone_number'); } ?>" />
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-6">
                                 <div class="form-group">
                                     <label for="address" class="control-label"><?php echo $this->lang->line('address'); ?></label>
-                                    <input type="text" id="address" class="form-control" maxlength="250"  value="<?php if ($this->session->userdata('useremail')) { echo  $this->session->userdata('useremail'); } ?>" />
+                                    <input type="text" id="address" class="form-control" maxlength="250"  value="<?php if ($this->session->userdata('useremail')) { echo  $this->session->userdata('address'); } ?>" />
                                 </div>
                                 <div class="form-group">
                                     <label for="city" class="control-label"><?php echo $this->lang->line('city'); ?></label>

@@ -18,6 +18,14 @@ class Student extends CI_Controller {
     }
 
     public function index(){
+
+        if(empty($this->session->userdata('useremail')))
+        {
+            redirect('student/login');
+        }
+
+
+
         $data = array();
         $data['title'] = 'Sign In';
         $data['base_url'] = $this->config->item('base_url');
@@ -25,10 +33,16 @@ class Student extends CI_Controller {
         $this->load->view('includes/header', $data);
         $this->load->view('student/login', $data);
         $this->load->view('includes/footer', $data);
+
+
     }
 
 
     public function reg(){
+        if(empty($this->session->userdata('useremail')))
+        {
+            redirect('student/login');
+        }
         $data['title'] = 'Sign In';
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
@@ -45,40 +59,45 @@ class Student extends CI_Controller {
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
 
-if($this->session->userdata('user_id')){
-    if(!empty($this->student_model->profile($this->session->userdata('user_id')))){
-        $data['profile'] = $this->student_model->profile($this->session->userdata('user_id'));
-        $data['appointments'] = $this->student_model->appointments($this->session->userdata('user_id'));
-        $this->load->view('includes/header', $data);
-        $this->load->view('student/profile', $data);
-        $this->load->view('includes/footer', $data);
-    }else {
-        $this->load->helper('student_helper');
-        return logout();
-    }
-}else {
-    redirect('student/login');
-}
-
-
+        if($this->session->userdata('user_id')){
+            if(!empty($this->student_model->profile($this->session->userdata('user_id')))){
+                $data['profile'] = $this->student_model->profile($this->session->userdata('user_id'));
+                $data['appointments'] = $this->student_model->appointments($this->session->userdata('user_id'));
+                $this->load->view('includes/header', $data);
+                $this->load->view('student/profile', $data);
+                $this->load->view('includes/footer', $data);
+            }else {
+                $this->load->helper('student_helper');
+                return logout();
+            }
+        }else {
+            redirect('student/login');
+        }
 
     }
 
 
     public function register()
     {
+        if(!empty($this->session->userdata('useremail')))
+        {
+            redirect('student/profile');
+        }
         $data = array();
         $data['title'] = 'Sign Up';
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
 
-        echo '<pre>';
-        print_r($_POST);
-        echo '</pre>';
+//        echo '<pre>';
+//        print_r($_POST);
+//        echo '</pre>';
 
 
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
         $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+        $this->form_validation->set_rules('address', 'Address', 'required');
+        $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
+        $this->form_validation->set_rules('zipcode', 'Zipcode', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
@@ -105,7 +124,7 @@ if($this->session->userdata('user_id')){
                     'last_name' => $this->input->post('last_name'),
                     'useremail' => $this->input->post('email'),
                     'address' => $this->input->post('address'),
-                    'phone_number' => $this->input->post('username'),
+                    'phone_number' => $this->input->post('phone_number'),
                     'zip_code' => $this->input->post('zipcode'),
                     'notes' => $this->input->post('notes'),
                     'user_id' => $user_id,
@@ -113,10 +132,6 @@ if($this->session->userdata('user_id')){
                 );
 
                 $this->session->set_userdata($user_data);
-//echo '<pre>';
-//print_r($_SESSION);
-//echo '</pre>';
-//exit;
 
                 redirect('student/profile');
             }

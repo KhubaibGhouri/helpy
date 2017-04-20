@@ -4,11 +4,11 @@
         public function register($enc_password){
             // User data array
             $data = array(
-                'first_name' => $this->input->post('l_name'),
-                'last_name' => $this->input->post('l_name'),
+                'first_name' => $this->input->post('first_name'),
+                'last_name' => $this->input->post('last_name'),
                 'email' => $this->input->post('email'),
                 'address' => $this->input->post('address'),
-                'phone_number' => $this->input->post('username'),
+                'phone_number' => $this->input->post('phone_number'),
                 'password	' => $enc_password,
                 'zip_code' => $this->input->post('zipcode'),
                 'id_roles' => '3',

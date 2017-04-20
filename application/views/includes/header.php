@@ -104,14 +104,25 @@
                         Add Appoinments
                     </a>
                 </li>
+
+                   <li>
+                       <a href="<?= $base_url?>messages" class="menu-item">
+                           Messages
+                       </a>
+                   </li>
                 <li>
                     <a href="<?= $base_url?>student/logout" class="menu-item">
                         Logout
                     </a>
                 </li>
 <?php }else {
-//                   echo '<pre>';
-//                   print_r($_SESSION);
+                   ?>
+                   <li>
+                       <a href="<?= $base_url?>backend" class="menu-item">
+                           Dashboard
+                       </a>
+                   </li>
+                <?php
                }?>
             </ul>
         </div>

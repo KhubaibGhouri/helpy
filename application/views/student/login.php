@@ -21,4 +21,8 @@
 		</div>
 	</div>
 </form>
+    <h4 class="text-center">or</h4>
+    <div class="text-center">
+    <a href="<?= $base_url?>student/register" class="btn btn-primary">Register Now</a>
+    </div>
 </div>

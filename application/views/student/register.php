@@ -28,6 +28,10 @@
             <label>Zipcode</label>
             <input type="text" class="form-control" name="zipcode" placeholder="Zipcode" value="<?= set_value('zipcode');?>">
         </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" name="notes" placeholder="Describe Yourself" value="<?= set_value('notes');?>">
+        </div>
 
         <div class="form-group">
             <label>Password</label>

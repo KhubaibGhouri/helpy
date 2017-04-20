@@ -27,51 +27,42 @@
     </tbody>
 </table>
 
-
-    <?php
-
-//    echo '<pre>';
-//    print_r($appointments);
-//    echo '</pre>';
-//    exit;
-
-
-    ?>
-
-
     <br><br>
     <h2 class="text-center">Appointments</h2>
     <table class="table table-borderd table-hover" >
         <thead>
-        <th>id</th>
         <th>Book DateTime</th>
         <th>Start DateTime</th>
-        <th>End DateTime</th>
-        <th>Notes</th>
+        <th>End DateTime</th>   
         <th>Provider ID</th>
         <th>Provider Status</th>
         <th>Provider Name</th>
+        <th>Action</th>
         </thead>
         <tbody>
     <?php
 
+
+//
 //    echo '<pre>';
 //    print_r($_SESSION);
 //    echo '</pre>';
+
+
+
 if(isset($appointments) && !empty($appointments)) {
     foreach ($appointments as $appointment) {
         ?>
 
 
         <tr>
-            <td><?= $appointment->id ?></td>
             <td> <?= date('d-M-Y h:i:s:a', strtotime($appointment->book_datetime)) ?></td>
             <td><?= date('d-M-Y h:i:s:a', strtotime($appointment->start_datetime)) ?></td>
             <td><?= date('d-M-Y h:i:s:a', strtotime($appointment->end_datetime)) ?></td>
-            <td><?= $appointment->notes ?></td>
-            <td><?= $appointment->id ?></td>
+            <td><?= $appointment->id_users_provider ?></td>
             <td><?= 'pending' ?></td>
             <td><?= $appointment->first_name . ' ' . $appointment->last_name ?></td>
+            <td><a href="<?= base_url()?>messages/<?= $appointment->id_users_provider  ?>">Message</a></td>
         </tr>
 
 
@@ -81,7 +72,7 @@ if(isset($appointments) && !empty($appointments)) {
 
     ?>
 
-    <tr><td colspan="7"><center>No data Found</center></td></tr>
+    <tr><td colspan="8"><center>No data Found</center></td></tr>
 
     <?php
 
