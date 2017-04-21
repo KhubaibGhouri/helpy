@@ -94,7 +94,7 @@
             <ul class="nav navbar-nav navbar-right">
                <?php if ($this->session->userdata('useremail')){?>
                 <li class="active">
-                    <a href="<?= $base_url; ?>" class="menu-item">
+                    <a href="<?= $base_url; ?>student" class="menu-item">
                         Home
                     </a>
                 </li>
@@ -128,11 +128,38 @@
                            Messages
                        </a>
                    </li>
+<?php
+if($this->session->userdata('role_slug') == 'admin') {
+    ?>
+    <li>
+        <a href="<?= $base_url ?>messages/all" class="menu-item">
+            Messages All
+        </a>
+    </li>
+    <?php
+}
+?>
+
                    <li>
                        <a href="<?= $base_url?>wallet" class="menu-item">
                            Wallet
                        </a>
                    </li>
+
+
+                   <?php
+                   if($this->session->userdata('role_slug') == 'admin') {
+                       ?>
+                       <li>
+                           <a href="<?= $base_url ?>wallet/all" class="menu-item">
+                               Wallet All
+                           </a>
+                       </li>
+                       <?php
+                   }
+                   ?>
+
+
                    <li>
                        <a href="<?= $base_url?>backend" class="menu-item">
                            Dashboard

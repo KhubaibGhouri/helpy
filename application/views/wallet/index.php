@@ -1,6 +1,7 @@
 <div class="container">
 
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 
     <h1 class="text-center text-red"><?=  $this->session->flashdata('error')?></h1>
 
@@ -80,6 +81,19 @@
 
     <br><br><br>
     <h1 class="text-center">
-        total  <small> <?= $cur_rec_total->currency - $cur->currency; ?> dhr </small>
+        Total  <small> <?= $cur_rec_total->currency - $cur->currency; ?> dhr </small>
     </h1>
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('table').DataTable();
+    } );
+</script>

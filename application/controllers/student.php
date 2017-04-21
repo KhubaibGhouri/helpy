@@ -24,8 +24,6 @@ class Student extends CI_Controller {
             redirect('student/login');
         }
 
-
-
         $data = array();
         $data['title'] = 'Sign In';
         $data['base_url'] = $this->config->item('base_url');
@@ -75,6 +73,66 @@ class Student extends CI_Controller {
         }
 
     }
+
+
+    public function update($id = '')
+    {
+
+
+        $data = array();
+        $data['title'] = 'Update Profile';
+        $data['base_url'] = $this->config->item('base_url');
+        $data['company_name'] = $this->settings_model->get_setting('company_name');
+
+
+        if(empty($this->session->userdata('useremail')))
+        {
+            redirect('student/login');
+        }
+
+if($id == ''){
+    $id = $this->session->userdata('user_id');
+}
+
+
+        $data['profile'] = $this->student_model->profile($id);
+
+        $this->form_validation->set_rules('first_name', 'First Name', 'required');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+        $this->form_validation->set_rules('address', 'Address', 'required');
+        $this->form_validation->set_rules('phone_number', 'Phone Number', 'required');
+        $this->form_validation->set_rules('zipcode', 'Zipcode', 'required');
+
+
+        $this->form_validation->set_rules('email', 'Email', 'required');
+
+        if($data['profile']-> email !== $this->input->post('email')){
+            $this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
+        }
+
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->load->view('includes/header', $data);
+                $this->load->view('student/update', $data);
+            $this->load->view('includes/footer', $data);
+        } else {
+            // Encrypt password
+            $enc_password = md5($this->input->post('password'));
+
+             if($this->student_model->updated($id, $enc_password)){
+
+                 $this->session->set_flashdata('user_registered', 'Profile Updated');
+
+            redirect('student/profile');
+             }
+
+//
+        }
+
+    }
+
 
 
     public function register()
@@ -167,11 +225,17 @@ class Student extends CI_Controller {
             // Login user
             $user_id = $this->student_model->login($username, $password);
 
+
+
             if($user_id){
                 // Create session
                 $user_data = array(
-                    'user_id' => $user_id,
+                    'user_id' => $user_id->id,
                     'useremail' => $username,
+                    'phone_number' => $user_id->phone_number,
+                    'first_name' => $user_id->first_name,
+                    'last_name' => $user_id->last_name,
+                    'id_roles' => $user_id->id_roles,
                     'logged_in' => true
                 );
 

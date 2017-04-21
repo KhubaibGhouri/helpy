@@ -79,8 +79,9 @@ class wallet extends CI_Controller
         $data = array();
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
-        $data['messages_sent'] = $this->wallet_model->all_sent();
-        $data['messages'] = $this->wallet_model->all_rec();
+
+
+        $data['all_wallet'] = $this->wallet_model->all_wallet();
 
         $this->load->view('includes/header', $data);
         $this->load->view('wallet/all', $data);

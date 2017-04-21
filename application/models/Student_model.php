@@ -43,11 +43,8 @@
 
             $result = $this->db->get('ea_users');
 
-
-
-
             if($result->num_rows() == 1){
-                return $result->row(0)->id;
+                return $result->row();
             } else {
                 return false;
             }
@@ -87,8 +84,30 @@
 
         }
 
+
+        public function updated($id, $password){
+
+            $data = array(
+                'first_name' => $this->input->post('first_name'),
+                'last_name' => $this->input->post('last_name'),
+                'email' => $this->input->post('email'),
+                'address' => $this->input->post('address'),
+                'phone_number' => $this->input->post('phone_number'),
+                'password	' => $password,
+                'zip_code' => $this->input->post('zipcode'),
+                'id_roles' => '3',
+                'notes' => $this->input->post('notes')
+            );
+
+            if($this->db->update('ea_users', $data, "id =".$id)){
+               return true;
+            } else {
+                return false;
+            }
+        }
+
         public function appointments($id){
-            $query = "SELECT * FROM `ea_appointments`  LEFT JOIN `ea_users` on ea_users.id = ea_appointments.id_users_provider WHERE `id_users_customer` =".$id;
+            $query = "SELECT ea_appointments.*, ea_users.*, ea_appointments.notes as noter FROM ea_appointments LEFT JOIN ea_users on ea_users.id = ea_appointments.id_users_provider WHERE `id_users_customer` =".$id;
             return $result = $this->db->query($query)->result();
         }
 

@@ -45,7 +45,7 @@
         <div class="form-group">
             <label class="col-sm-4" for="message">Type Money</label>
             <div class="col-sm-8">
-                <input type="number" name="message" id="message" class="form-control" placeholder="Type Currency" >
+                <input type="number" value="20" min="20" required="required" name="message" id="message" class="form-control" placeholder="Type Currency" >
             </div>
         </div>
 

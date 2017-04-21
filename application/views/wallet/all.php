@@ -1,53 +1,40 @@
 <?php
-//echo $this->session->userdata('user_id');
-//echo '<pre>';
-//print_r($_SESSION);
-//echo '</pre>';
-//
-//echo '<pre>';
-//print_r($messages_sent);
-//echo '</pre>';
-
 if($this->session->userdata('role_slug') !== 'admin'){
-    redirect('messages');
+    redirect('wallet');
 }
-
-
 ?>
 
 
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 
 <div class="container">
-
-
-    <h2 class="text-center">Messages Recieved</h2>
-
-    <table class="table table-default table-bordered ">
+    <h2 class="text-center">All Transections</h2>
+    <table class="table dattable table-default table-bordered ">
         <thead>
         <tr>
             <th>#ID</th>
             <th>#, Name</th>
-            <th>Message </th>
-            <th>Message At</th>
+            <th>Tansfered by </th>
+            <th>Tansfered At</th>
+            <th>Ammount</th>
         </tr>
         </thead>
         <tbody>
         <?php
-
-        if(!empty($messages_sent)){
-            foreach ($messages_sent as $message){
+        if(!empty($all_wallet)){
+            foreach ($all_wallet as $all_walletz){
                 ?>
                 <tr>
-                    <td><?= $message['mes_id']?></td>
-                    <td><?= $message['mes_to'] .',  '. $message['first_name'].'  '. $message['last_name'] ?></td>
-                    <td><?= $message['mes_messages']?></td>
-                    <td><?= $message['mes_created_at']?></td>
+                    <td><?= $all_walletz['wal_id']?></td>
+                    <td><?= $all_walletz['id'] .',  '. $all_walletz['first_name'].'  '. $all_walletz['last_name'] ?></td>
+                    <td><?=$all_walletz['wal_by'] . ', ' . $all_walletz['by_first_name'] . ' ' . $all_walletz['by_last_name']?></td>
+                    <td><?= $all_walletz['wallet_date']?></td>
+                    <td><?= $all_walletz['wal_currency']?> <small>dhr</small></td>
                 </tr>
                 <?php
             }
         }else {
-
             ?>
             <tr><td colspan="5">Sorry no Messages found</td></tr>
             <?php
@@ -55,43 +42,17 @@ if($this->session->userdata('role_slug') !== 'admin'){
         ?>
         </tbody>
     </table>
-
-
-    <br>
-
-
-    <h2 class="text-center">Messages Sent</h2>
-
-    <table class="table table-default table-bordered ">
-        <thead>
-        <tr>
-            <th>#ID</th>
-            <th>#, Name</th>
-            <th>Message </th>
-            <th>Message At</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-
-        if(!empty($messages)){
-            foreach ($messages as $message){
-                ?>
-                <tr>
-                    <td><?= $message['mes_id']?></td>
-                    <td><?= $message['mes_to'] .',  '. $message['first_name'].'  '. $message['last_name'] ?></td>
-                    <td><?= $message['mes_messages']?></td>
-                    <td><?= $message['mes_created_at']?></td>
-                </tr>
-                <?php
-            }
-        }else {
-            ?>
-            <tr><td colspan="4">Sorry no Messages found</td></tr>
-            <?php
-        }
-
-        ?>
-        </tbody>
-    </table>
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+
+<script>
+    $(document).ready(function() {
+        $('.dattable').DataTable();
+    } );
+</script>

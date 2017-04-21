@@ -73,7 +73,7 @@ class Appointments extends CI_Controller {
 			foreach ($available_providers as $index=>$provider) {
 				$stripped_data = array(
 					'id' => $provider['id'],
-					'first_name' => $provider['first_name'],
+					'first_name' => '#' . $provider['id'] . ', '. $provider['first_name'],
 					'last_name' => $provider['last_name'],
 					'services' => $provider['services']
 				);
