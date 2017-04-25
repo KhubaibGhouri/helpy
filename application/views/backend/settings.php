@@ -438,70 +438,70 @@
         //
         // --------------------------------------------------------------
     ?>
-    <div id="about" class="tab-content">
-        <h3>Easy!Appointments</h3>
-        <p>
-            <?php echo $this->lang->line('about_ea_info'); ?>
-        </p>
+<!--    <div id="about" class="tab-content">-->
+<!--        <h3>Easy!Appointments</h3>-->
+<!--        <p>-->
+<!--            --><?php //echo $this->lang->line('about_ea_info'); ?>
+<!--        </p>-->
+<!---->
+<!--        <br>-->
+<!---->
+<!--        <div class="current-version">-->
+<!--            --><?php
+//                echo $this->lang->line('current_version') . ' ';
+//                echo $this->config->item('version');
+//                $release_title = $this->config->item('release_label');
+//                if ($release_title != '') {
+//                    echo ' - ' . $release_title;
+//                }
+//            ?>
+<!--        </div>-->
+<!---->
+<!--		<br>-->
 
-        <br>
-
-        <div class="current-version">
-            <?php
-                echo $this->lang->line('current_version') . ' ';
-                echo $this->config->item('version');
-                $release_title = $this->config->item('release_label');
-                if ($release_title != '') {
-                    echo ' - ' . $release_title;
-                }
-            ?>
-        </div>
-
-		<br>
-
-        <h3><?php echo $this->lang->line('support'); ?></h3>
-        <p>
-            <?php echo $this->lang->line('about_ea_support'); ?>
-            <br><br>
-            <a href="http://easyappointments.org">
-                <?php echo $this->lang->line('official_website'); ?>
-            </a>
-            |
-            <a href="https://groups.google.com/forum/#!forum/easy-appointments">
-                <?php echo $this->lang->line('support_group'); ?>
-            </a>
-            |
-            <a href="https://github.com/alextselegidis/easyappointments/issues">
-                <?php echo $this->lang->line('project_issues'); ?>
-            </a>
-            |
-            <a href="http://easyappointments.wordpress.com">
-                E!A Blog
-            </a>
-            |
-            <a href="https://www.facebook.com/easyappointments.org">
-                Facebook
-            </a>
-            |
-            <a href="https://plus.google.com/+EasyappointmentsOrg">
-                Google+
-            </a>
-            |
-            <a href="https://twitter.com/EasyAppts">
-                Twitter
-            </a>
-            |
-            <a href="https://plus.google.com/communities/105333709485142846840">
-                <?php echo $this->lang->line('google_plus_community'); ?>
-            </a>
-        </p>
-
-		<br>
-
-		<h3><?php echo $this->lang->line('license'); ?></h3>
-		<p>
-            <?php echo $this->lang->line('about_ea_license'); ?>
-            <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
-        </p>
-    </div>
+<!--        <h3>--><?php //echo $this->lang->line('support'); ?><!--</h3>-->
+<!--        <p>-->
+<!--            --><?php //echo $this->lang->line('about_ea_support'); ?>
+<!--            <br><br>-->
+<!--            <a href="http://easyappointments.org">-->
+<!--                --><?php //echo $this->lang->line('official_website'); ?>
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="https://groups.google.com/forum/#!forum/easy-appointments">-->
+<!--                --><?php //echo $this->lang->line('support_group'); ?>
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="https://github.com/alextselegidis/easyappointments/issues">-->
+<!--                --><?php //echo $this->lang->line('project_issues'); ?>
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="http://easyappointments.wordpress.com">-->
+<!--                E!A Blog-->
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="https://www.facebook.com/easyappointments.org">-->
+<!--                Facebook-->
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="https://plus.google.com/+EasyappointmentsOrg">-->
+<!--                Google+-->
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="https://twitter.com/EasyAppts">-->
+<!--                Twitter-->
+<!--            </a>-->
+<!--            |-->
+<!--            <a href="https://plus.google.com/communities/105333709485142846840">-->
+<!--                --><?php //echo $this->lang->line('google_plus_community'); ?>
+<!--            </a>-->
+<!--        </p>-->
+<!---->
+<!--		<br>-->
+<!---->
+<!--		<h3>--><?php //echo $this->lang->line('license'); ?><!--</h3>-->
+<!--		<p>-->
+<!--            --><?php //echo $this->lang->line('about_ea_license'); ?>
+<!--            <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>-->
+<!--        </p>-->
+<!--    </div>-->
 </div>

@@ -31,8 +31,6 @@ class Student extends CI_Controller {
         $this->load->view('includes/header', $data);
         $this->load->view('student/login', $data);
         $this->load->view('includes/footer', $data);
-
-
     }
 
 
@@ -50,17 +48,30 @@ class Student extends CI_Controller {
     }
 
     // Log in user
-    public function profile(){
+    public function profile($id = null){
 
         $data = array();
         $data['title'] = 'Sign In';
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
 
-        if($this->session->userdata('user_id')){
-            if(!empty($this->student_model->profile($this->session->userdata('user_id')))){
-                $data['profile'] = $this->student_model->profile($this->session->userdata('user_id'));
-                $data['appointments'] = $this->student_model->appointments($this->session->userdata('user_id'));
+
+
+        if(empty($id)) {
+           $id = $this->session->userdata('user_id');
+        }else {
+            if($this->session->userdata('role_slug') == 'admin'){
+                $id = $id;
+            }else {
+                $id = null;
+            }
+        }
+
+
+        if($id){
+            if(!empty($this->student_model->profile($id))){
+                $data['profile'] = $this->student_model->profile($id);
+                $data['appointments'] = $this->student_model->appointments($id);
                 $this->load->view('includes/header', $data);
                 $this->load->view('student/profile', $data);
                 $this->load->view('includes/footer', $data);
@@ -220,35 +231,39 @@ if($id == ''){
             // Get and encrypt the password
             $password = md5($this->input->post('password'));
 
-
-
             // Login user
             $user_id = $this->student_model->login($username, $password);
 
 
-
             if($user_id){
                 // Create session
+                if($user_id->user_status == 0) {
+                    $this->session->set_flashdata('login_failed', 'Sorry your Account has been Blocked!');
+                    redirect('student/login');
+                }
+
+
+if($user_id->id_roles == 3){
                 $user_data = array(
                     'user_id' => $user_id->id,
                     'useremail' => $username,
                     'phone_number' => $user_id->phone_number,
                     'first_name' => $user_id->first_name,
                     'last_name' => $user_id->last_name,
-                    'id_roles' => $user_id->id_roles,
+                    'id_roles' => '3',
+                    'role_slug' => 'student',
                     'logged_in' => true
                 );
-
                 $this->session->set_userdata($user_data);
-
                 // Set message
                 $this->session->set_flashdata('user_loggedin', 'You are now logged in');
-
                 redirect('student/profile');
+}else {
+    redirect('/');
+}
             } else {
                 // Set message
                 $this->session->set_flashdata('login_failed', 'Login is invalid');
-
                 redirect('student/login');
             }
         }
@@ -261,10 +276,12 @@ if($id == ''){
         $this->session->unset_userdata('user_id');
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('useremail');
+        $this->session->unset_userdata('role_slug');
+        $this->session->unset_userdata('id_roles');
+
 
         // Set message
         $this->session->set_flashdata('user_loggedout', 'You are now logged out');
-
         redirect('student/login');
     }
 

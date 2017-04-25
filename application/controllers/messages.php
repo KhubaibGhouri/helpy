@@ -58,7 +58,7 @@ class messages extends CI_Controller
     }
 
 
-    public function all()
+    public function all($id = null)
     {
         $data = array();
         $data['base_url'] = $this->config->item('base_url');
@@ -66,8 +66,8 @@ class messages extends CI_Controller
 
         $this->load->model('messagingz_model');
 
-        $data['messages_sent'] = $this->messagingz_model->all_sent();
-        $data['messages'] = $this->messagingz_model->all_rec();
+        $data['messages_sent'] = $this->messagingz_model->all_sent($id);
+        $data['messages'] = $this->messagingz_model->all_rec($id);
 
         $this->load->view('includes/header', $data);
         $this->load->view('messages/all', $data);

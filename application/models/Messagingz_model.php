@@ -42,9 +42,19 @@ class Messagingz_Model extends CI_Model
 
 
 
-    public function all_sent()
+    public function all_sent($id = null)
     {
-        $results =  $this->db->query("SELECT * FROM messages as mes LEFT JOIN  ea_users u on  mes.mes_by= u.id");
+
+        if($id)
+        {
+            $status = ' WHERE mes.mes_to = '.$id;
+        }
+        else {
+            $status = '';
+        }
+
+
+        $results =  $this->db->query("SELECT * FROM messages as mes LEFT JOIN  ea_users u on  mes.mes_by= u.id ". $status);
         if ($results->num_rows() > 0) {
             return $results->result_array();
         } else {
@@ -53,9 +63,17 @@ class Messagingz_Model extends CI_Model
 
     }
 
-    public function all_rec()
+    public function all_rec($id = null)
     {
-        $results =  $this->db->query("SELECT * FROM messages as mes LEFT JOIN  ea_users u on  mes.mes_to= u.id");
+        if($id)
+        {
+            $status = ' WHERE mes.mes_by = '.$id;
+        }
+        else {
+            $status = '';
+        }
+
+    $results =  $this->db->query("SELECT * FROM messages as mes LEFT JOIN  ea_users u on  mes.mes_to = u.id". $status);
         if ($results->num_rows() > 0) {
             return $results->result_array();
         } else {

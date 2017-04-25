@@ -36,7 +36,7 @@ if($this->session->userdata('role_slug') !== 'admin'){
             }
         }else {
             ?>
-            <tr><td colspan="5">Sorry no Messages found</td></tr>
+            <tr><td colspan="5">Sorry no Transaction found</td></tr>
             <?php
         }
         ?>

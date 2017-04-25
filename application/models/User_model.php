@@ -99,7 +99,8 @@ class User_Model extends CI_Model {
                 ->join('ea_roles', 'ea_roles.id = ea_users.id_roles', 'inner')
                 ->join('ea_user_settings', 'ea_user_settings.id_users = ea_users.id')
                 ->where('ea_user_settings.username', $username)
-                ->where('ea_user_settings.password', $password)
+            ->where('ea_user_settings.password', $password)
+            ->where('ea_users.user_status', '1')
                 ->get()->row_array();
 
         return ($user_data) ? $user_data : NULL;

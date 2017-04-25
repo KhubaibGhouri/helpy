@@ -157,6 +157,9 @@
             if ($('#customer-id').val() != '') {
                 customer.id = $('#customer-id').val();
             }
+            if ($('#customer-id').val() != '') {
+                customer.id = $('#customer-id').val();
+            }
 
             if (!instance.validate(customer)) return;
 

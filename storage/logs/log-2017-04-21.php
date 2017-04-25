@@ -45,3 +45,4 @@ ERROR - 2017-04-21 13:50:52 --> Severity: Notice --> Undefined variable: base_ur
 ERROR - 2017-04-21 13:50:52 --> Severity: Notice --> Undefined variable: base_url C:\xampp\htdocs\helpy\application\views\includes\footer.php 8
 ERROR - 2017-04-21 13:54:01 --> Severity: Notice --> Undefined property: stdClass::$zipcode C:\xampp\htdocs\helpy\application\views\student\update.php 39
 ERROR - 2017-04-21 14:36:56 --> Severity: Parsing Error --> syntax error, unexpected '==' (T_IS_EQUAL) C:\xampp\htdocs\helpy\application\controllers\student.php 110
+ERROR - 2017-04-21 18:48:25 --> Severity: Parsing Error --> syntax error, unexpected '?>' C:\xampp\htdocs\helpy\application\views\appointments\book.php 403

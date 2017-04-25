@@ -11,7 +11,7 @@
 
 
 <?php echo form_open('student/update'); ?>
-<div class="row">
+<div class="">
     <div class="col-md-4 col-md-offset-4">
         <h1 class="text-center"><?= $title; ?></h1>
         <div class="form-group">

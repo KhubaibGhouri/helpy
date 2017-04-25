@@ -3,16 +3,16 @@
       <!--   Powered by
         <a href="http://easyappointments.org">Easy!Appointments
             <?php
-                echo 'v' . $this->config->item('version');
-
-                $release_title = $this->config->item('release_label');
-                if ($release_title != '') {
-                    echo ' - ' . $release_title;
-                }
+//                echo 'v' . $this->config->item('version');
+//
+//                $release_title = $this->config->item('release_label');
+//                if ($release_title != '') {
+//                    echo ' - ' . $release_title;
+//                }
             ?></a> |
         <?php echo $this->lang->line('licensed_under'); ?> GPLv3 |
         <span id="select-language" class="label label-success">
-        	<?php echo ucfirst($this->config->item('language')); ?>
+        	<?php // echo ucfirst($this->config->item('language')); ?>
         </span>
         | -->
         <a href="<?php echo site_url('appointments'); ?>">

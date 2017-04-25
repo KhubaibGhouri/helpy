@@ -74,14 +74,14 @@ class wallet extends CI_Controller
     }
 
 
-    public function all()
+    public function all($id = null)
     {
         $data = array();
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
 
 
-        $data['all_wallet'] = $this->wallet_model->all_wallet();
+        $data['all_wallet'] = $this->wallet_model->all_wallet($id);
 
         $this->load->view('includes/header', $data);
         $this->load->view('wallet/all', $data);

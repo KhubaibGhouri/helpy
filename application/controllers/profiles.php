@@ -21,9 +21,6 @@ class profiles extends CI_Controller
 
         $this->load->model('profiles_model');
 
-
-
-
         $data['teachers'] = $this->profiles_model->teachers();
         $data['students'] = $this->profiles_model->students();
 
@@ -31,6 +28,24 @@ class profiles extends CI_Controller
         $this->load->view('profiles/index', $data);
         $this->load->view('includes/footer', $data);
     }
+
+
+    public function status($id, $status)
+    {
+        $this->load->model('profiles_model');
+        if($this->profiles_model->status($id,$status)){
+            if($status == 0){
+                $status = 'Blocked';
+            }else {
+                $status = 'Unblocked';
+            }
+            $this->session->set_flashdata('error', 'User Set to '.$status);
+            redirect('profiles');
+        }
+
+    }
+
+
 }
 
 

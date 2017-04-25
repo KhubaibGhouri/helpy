@@ -321,6 +321,7 @@
                                 <label for="provider-notes"><?php echo $this->lang->line('notes'); ?></label>
                                 <textarea id="provider-notes" class="form-control" rows="3"></textarea>
                             </div>
+
                         </div>
                         <div class="provider-settings col-md-6">
                             <div class="form-group">

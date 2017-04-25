@@ -367,20 +367,20 @@
                     // FRAME FOOTER
                     // ------------------------------------------------------ ?>
 
-                <div id="frame-footer">
-                    Powered By
-                    <a href="http://easyappointments.org" target="_blank">Easy!Appointments</a>
-                    |
-                    <span id="select-language" class="label label-success">
-    		        	<?php echo ucfirst($this->config->item('language')); ?>
-    		        </span>
-                    |
-                    <a href="<?php echo site_url('backend'); ?>">
-                        <?php echo $this->session->userdata('user_id')
-                            ? $this->lang->line('backend_section') 
-                            : $this->lang->line('login'); ?>
-                    </a>
-                </div>
+<!--                <div id="frame-footer">-->
+<!--                    Powered By-->
+<!--                    <a href="http://easyappointments.org" target="_blank">Easy!Appointments</a>-->
+<!--                    |-->
+<!--                    <span id="select-language" class="label label-success">-->
+<!--    		        	--><?php //echo ucfirst($this->config->item('language')); ?>
+<!--    		        </span>-->
+<!--                    |-->
+<!--                    <a href="--><?php //echo site_url('backend'); ?><!--">-->
+<!--                        --><?php //echo $this->session->userdata('user_id')
+//                            ? $this->lang->line('backend_section')
+//                            : $this->lang->line('login'); ?>
+<!--                    </a>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

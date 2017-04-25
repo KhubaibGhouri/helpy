@@ -17,14 +17,9 @@
 
             // Insert user
             if($this->db->insert('ea_users', $data)) {
-
-
                 $this->db->where('email', $this->input->post('email'));
                 $this->db->where('password', $enc_password);
-
                 $result = $this->db->get('ea_users');
-
-
                 if ($result->num_rows() == 1) {
                     return $result->row(0)->id;
                 } else {
@@ -72,16 +67,11 @@
 
         public function profile($id){
             $query = $this->db->get_where('ea_users', array('id' => $id))->row();
-
-//            echo $this->db->last_query();
-//            exit;
             if(!empty($query)){
-
                 return $query;
             } else {
                 return false;
             }
-
         }
 
 

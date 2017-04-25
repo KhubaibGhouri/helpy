@@ -22,4 +22,20 @@ class Profiles_model extends CI_Model
         }
     }
 
+
+
+    public function status($id, $status)
+    {
+
+        $this->db->update('ea_users', array('user_status' => $status), "id = ".$id);
+        if($this->db->affected_rows() > 0){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+
+
 }

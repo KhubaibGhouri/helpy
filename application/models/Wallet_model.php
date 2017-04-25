@@ -88,9 +88,17 @@ class Wallet_model extends CI_Model
 
 
 
-    public function all_wallet()
+    public function all_wallet($id)
     {
-        $results =  $this->db->query("SELECT w.*, u.*, z.first_name as by_first_name, z.last_name as by_last_name, z.id as by_id FROM wallet w LEFT JOIN ea_users u on w.wal_of = u.id LEFT JOIN ea_users z on w.wal_by = z.id");
+
+        if($id) {
+            $status = " where w.wal_of = " . $id;
+        }else {
+            $status = "";
+        }
+
+
+        $results =  $this->db->query("SELECT w.*, u.*, z.first_name as by_first_name, z.last_name as by_last_name, z.id as by_id FROM wallet w LEFT JOIN ea_users u on w.wal_of = u.id LEFT JOIN ea_users z on w.wal_by = z.id ". $status);
         if ($results->num_rows() > 0) {
             return $results->result_array();
         } else {

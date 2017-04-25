@@ -1,6 +1,4 @@
 <div class="container">
-
-
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 
     <h1 class="text-center text-red"><?=  $this->session->flashdata('error')?></h1>
