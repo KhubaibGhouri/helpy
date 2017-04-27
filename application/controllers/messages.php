@@ -19,7 +19,6 @@ class messages extends CI_Controller
 
     public function index()
     {
-
         $data = array();
         $data['title'] = 'Sign In';
         $data['base_url'] = $this->config->item('base_url');
@@ -30,7 +29,6 @@ class messages extends CI_Controller
         $this->load->view('includes/header', $data);
         $this->load->view('messages/index', $data);
         $this->load->view('includes/footer', $data);
-
     }
 
     public function send($id = "") {

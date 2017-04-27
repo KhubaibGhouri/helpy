@@ -91,6 +91,8 @@ window.BackendSettings = window.BackendSettings || {};
         $('#state').val(GlobalVariables.settings.user.state);
         $('#zip-code').val(GlobalVariables.settings.user.zip_code);
         $('#notes').val(GlobalVariables.settings.user.notes);
+        $('#Education').val(GlobalVariables.settings.user.education);
+        $('#Work').val(GlobalVariables.settings.user.work);
 
         $('#username').val(GlobalVariables.settings.user.settings.username);
         $('#password, #retype-password').val('');

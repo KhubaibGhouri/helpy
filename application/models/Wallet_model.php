@@ -39,9 +39,14 @@ class Wallet_model extends CI_Model
     }
 
 
-    public function cur_rec_total()
+    public function cur_rec_total($id= null)
     {
-        $currency = $this->db->query( "SELECT SUM(wal_currency) AS currency FROM wallet where wal_of = ". $this->session->userdata('user_id'));
+
+if($id == "") {
+    $id = $this->session->userdata('user_id');
+}
+
+        $currency = $this->db->query( "SELECT SUM(wal_currency) AS currency FROM wallet where wal_of = ". $id);
         if ($currency->num_rows() > 0) {
             return $currency->row(0);
         } else {
@@ -119,4 +124,38 @@ class Wallet_model extends CI_Model
         }
 
     }
+
+
+
+    public function add_success($data)
+    {
+
+$percent =  $data['payment_gross'] * 15/100 ;
+$ammount = $data['payment_gross'] - $percent;
+
+        if($this->db->insert('paypal', $data)) {
+
+            $data1 = array(
+                "wal_currency" => $percent,
+                "wal_of"       => "84",
+                "wal_by"       => $data['item_number']
+                );
+
+            $data2 = array(
+                "wal_currency" => $ammount,
+                "wal_of"       => $data['item_number'],
+                "wal_by"       => "84"
+                );
+
+            $this->db->insert('wallet', $data1);
+            $this->db->insert('wallet', $data2);
+
+            return true;
+
+        }else {
+            return false;
+        }
+    }
+
+
 }

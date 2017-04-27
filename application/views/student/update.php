@@ -1,15 +1,5 @@
 <?php echo validation_errors(); ?>
 
-
-<?php
-
-//echo '<pre>';
-//print_r($profile);
-//echo '</pre>';
-
-?>
-
-
 <?php echo form_open('student/update'); ?>
 <div class="">
     <div class="col-md-4 col-md-offset-4">
@@ -39,10 +29,17 @@
             <input type="text" class="form-control" name="zipcode" placeholder="Zipcode" value="<?= $profile->zip_code;?>">
         </div>
         <div class="form-group">
-            <label>Description</label>
-            <input type="text" class="form-control" name="notes" placeholder="Describe Yourself" value="<?= $profile->notes;?>">
+            <label>Work</label>
+            <input type="text" class="form-control" name="work" placeholder="Describe Your Work Profile" value="<?= $profile->work;?>">
         </div>
-
+        <div class="form-group">
+            <label>Education</label>
+            <textarea class="form-control" name="education" placeholder="Describe Education Profile"><?= $profile->education;?></textarea>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" name="notes" placeholder="Describe Yourself"><?= $profile->notes;?></textarea>
+        </div>
         <div class="form-group">
             <label>Password</label>
             <input type="password" class="form-control" name="password" placeholder="Password">

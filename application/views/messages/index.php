@@ -42,7 +42,7 @@
     }else {
 
         ?>
-        <tr><td colspan="5">Sorry no Messages found</td></tr>
+        <tr><td colspan="5"><center>Sorry no Messages found</center></td></tr>
         <?php
     }
     ?>
@@ -81,7 +81,7 @@
         }else {
 
             ?>
-            <tr><td colspan="4">Sorry no Messages found</td></tr>
+            <tr><td colspan="4"><center>Sorry no Messages found</center></td></tr>
             <?php
         }
         ?>

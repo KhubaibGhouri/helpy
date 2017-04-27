@@ -392,7 +392,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="notes"><?php echo $this->lang->line('notes'); ?></label>
+                    <label for="Education">Education</label>
+                    <textarea id="Education" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="Work">Work</label>
+                    <textarea id="Work" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">General Description</label>
                     <textarea id="notes" class="form-control" rows="3"></textarea>
                 </div>
             </fieldset>

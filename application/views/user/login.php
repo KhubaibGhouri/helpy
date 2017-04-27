@@ -141,12 +141,13 @@
 
             <br><br>
 
-            <a href="<?php echo site_url('user/forgot_password'); ?>" class="forgot-password">
-            	<?php echo $this->lang->line('forgot_your_password'); ?></a>
-            |
-            <span id="select-language" class="label label-success">
+       <!--      <a href="<?php echo site_url('user/forgot_password'); ?>" class="forgot-password">
+            	<?php echo $this->lang->line('forgot_your_password'); ?></a> -->
+            
+            <a href="teacher" class="forgot-password">Signup</a>
+           <!--  <span id="select-language" class="label label-success">
 	        	<?php echo ucfirst($this->config->item('language')); ?>
-	        </span>
+	        </span> -->
         </form>
     </div>
 

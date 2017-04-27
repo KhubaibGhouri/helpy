@@ -74,6 +74,7 @@ class wallet extends CI_Controller
     }
 
 
+
     public function all($id = null)
     {
         $data = array();
@@ -87,6 +88,53 @@ class wallet extends CI_Controller
         $this->load->view('wallet/all', $data);
         $this->load->view('includes/footer', $data);
 
+    }
+
+    public function success($id = null)
+    {   
+        $data = array();
+        $data = $_POST;
+
+       if($this->wallet_model->add_success($data)) {
+            redirect('wallet/check');
+       }
+
+
+
+    }
+
+
+    public function check($id = null)
+    {   
+
+
+        $data = array();
+        $data['title'] = 'Sign In';
+        $data['base_url'] = $this->config->item('base_url');
+        $data['company_name'] = $this->settings_model->get_setting('company_name');
+
+
+
+if($id == null){
+        $id =  $this->session->userdata('user_id');
+}
+
+        $data['all_wallet'] = $this->wallet_model->all_wallet($id);
+
+        $data['cur_rec_total'] = $this->wallet_model->cur_rec_total($id);
+
+        if($data['cur_rec_total'] > 20) {
+
+            $this->session->set_flashdata('login_failed', 'Sorry you do not have enough Currency in your wallet');
+            $this->load->view('includes/header', $data);
+            $this->load->view('wallet/pay', $data);
+            $this->load->view('includes/footer', $data);
+
+        }else {
+            // echo $data['cur_rec_total'] -> currency;
+            redirect('appointments');
+
+        }
     }
 }
 

@@ -367,7 +367,7 @@
                     // FRAME FOOTER
                     // ------------------------------------------------------ ?>
 
-<!--                <div id="frame-footer">-->
+                <div id="frame-footer">
 <!--                    Powered By-->
 <!--                    <a href="http://easyappointments.org" target="_blank">Easy!Appointments</a>-->
 <!--                    |-->
@@ -375,12 +375,12 @@
 <!--    		        	--><?php //echo ucfirst($this->config->item('language')); ?>
 <!--    		        </span>-->
 <!--                    |-->
-<!--                    <a href="--><?php //echo site_url('backend'); ?><!--">-->
-<!--                        --><?php //echo $this->session->userdata('user_id')
+<!--<!--                    <a href="--><?php //echo site_url('backend'); ?><!--<!--">-->
+<!--<!--                        --><?php //echo $this->session->userdata('user_id')
 //                            ? $this->lang->line('backend_section')
 //                            : $this->lang->line('login'); ?>
 <!--                    </a>-->
-<!--                </div>-->
+                </div>
             </div>
         </div>
     </div>
@@ -432,7 +432,7 @@
         src="<?php echo base_url('assets/ext/datejs/date.js'); ?>"></script>
     <script
         type="text/javascript"
-        src="<?php echo base_url('assets/js/fronteend_book_api.js'); ?>"></script>
+        src="<?php echo base_url('assets/js/frontend_book_api.js'); ?>"></script>
     <script
         type="text/javascript"
         src="<?php echo base_url('assets/js/frontend_book.js'); ?>"></script>

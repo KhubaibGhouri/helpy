@@ -100,7 +100,7 @@
                 </li>
 
                 <li>
-                    <a href="<?= $base_url?>appointments" class="menu-item">
+                    <a href="<?= $base_url?>wallet/check" class="menu-item">
                         Add Appoinments
                     </a>
                 </li>

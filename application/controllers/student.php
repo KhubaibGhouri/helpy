@@ -19,9 +19,13 @@ class Student extends CI_Controller {
 
     public function index(){
 
-        if(empty($this->session->userdata('useremail')))
+        if($this->session->userdata('role_slug') == 'student')
         {
-            redirect('student/login');
+            redirect('student/profile');
+        }
+        elseif ($this->session->userdata('role_slug') == 'admin' || $this->session->userdata('role_slug') == 'provider')
+        {
+            redirect('/backend');
         }
 
         $data = array();
@@ -59,12 +63,10 @@ class Student extends CI_Controller {
 
         if(empty($id)) {
            $id = $this->session->userdata('user_id');
-        }else {
-            if($this->session->userdata('role_slug') == 'admin'){
+        }
+        else {
                 $id = $id;
-            }else {
-                $id = null;
-            }
+                $data['pager_id'] = array( 'id' => $id );
         }
 
 
@@ -72,6 +74,19 @@ class Student extends CI_Controller {
             if(!empty($this->student_model->profile($id))){
                 $data['profile'] = $this->student_model->profile($id);
                 $data['appointments'] = $this->student_model->appointments($id);
+                $id_by = $this->session->userdata('user_id');
+
+                if($this->input->post('rating_value')) {
+                        $this->form_validation->set_rules('rating_value', 'Rating', 'required');
+                        if ($this->form_validation->run()) { 
+                               if($this->student_model->rating_add($id, $id_by, $this->input->post('rating_value'))){
+                                    redirect('student/profile/'.$id);
+                               }
+                        }
+                }
+
+
+                $data['rating'] = $this->student_model->rating($id);
                 $this->load->view('includes/header', $data);
                 $this->load->view('student/profile', $data);
                 $this->load->view('includes/footer', $data);
@@ -105,7 +120,6 @@ if($id == ''){
     $id = $this->session->userdata('user_id');
 }
 
-
         $data['profile'] = $this->student_model->profile($id);
 
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
@@ -138,8 +152,6 @@ if($id == ''){
 
             redirect('student/profile');
              }
-
-//
         }
 
     }
@@ -156,10 +168,6 @@ if($id == ''){
         $data['title'] = 'Sign Up';
         $data['base_url'] = $this->config->item('base_url');
         $data['company_name'] = $this->settings_model->get_setting('company_name');
-
-//        echo '<pre>';
-//        print_r($_POST);
-//        echo '</pre>';
 
 
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
@@ -184,8 +192,6 @@ if($id == ''){
             // Set message
             $this->session->set_flashdata('user_registered', 'You are now registered');
 
-//            echo $user_id;
-
             if ($user_id) {
                 // Create session
                 $user_data = array(
@@ -193,8 +199,8 @@ if($id == ''){
                     'last_name' => $this->input->post('last_name'),
                     'useremail' => $this->input->post('email'),
                     'address' => $this->input->post('address'),
-                    'phone_number' => $this->input->post('phone_number'),
                     'zip_code' => $this->input->post('zipcode'),
+                    'phone_number' => $this->input->post('phone_number'),
                     'notes' => $this->input->post('notes'),
                     'user_id' => $user_id,
                     'logged_in' => true
@@ -250,6 +256,9 @@ if($user_id->id_roles == 3){
                     'phone_number' => $user_id->phone_number,
                     'first_name' => $user_id->first_name,
                     'last_name' => $user_id->last_name,
+                    'address' => $user_id->address,
+                    'zip_code' => $user_id->zip_code,
+                    'city' => $user_id->city,
                     'id_roles' => '3',
                     'role_slug' => 'student',
                     'logged_in' => true

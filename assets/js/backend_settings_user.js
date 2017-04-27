@@ -37,6 +37,8 @@
             city: $('#city').val(),
             state: $('#state').val(),
             zip_code: $('#zip-code').val(),
+            work: $('#Work').val(),
+            education: $('#Education').val(),
             notes: $('#notes').val(),
             settings: {
                 username: $('#username').val(),
