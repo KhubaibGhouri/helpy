@@ -16,7 +16,7 @@
         rel="stylesheet"
         type="text/css"
         href="<?php echo $base_url; ?>/assets/ext/bootstrap/css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo $base_url; ?>/assets/css/bootswatch.css">
     <link
         rel="stylesheet"
         type="text/css"

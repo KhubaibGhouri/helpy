@@ -21,6 +21,7 @@ class profiles extends CI_Controller
 
         $this->load->model('profiles_model');
 
+        $data['admins'] = $this->profiles_model->admins();
         $data['teachers'] = $this->profiles_model->teachers();
         $data['students'] = $this->profiles_model->students();
 

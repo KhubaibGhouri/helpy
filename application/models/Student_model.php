@@ -97,6 +97,16 @@
             }
         }
 
+        public function rating_num($id = null){
+
+            $result = $this->db
+                           ->select('*')
+                           ->from('rating')
+                           ->where('rating_to', $id)->get();
+
+            return $result->num_rows();
+
+        }
         public function rating($id = null){
 //             $query = "SELECT *
 // FROM rating r

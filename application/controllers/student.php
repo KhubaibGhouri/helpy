@@ -71,6 +71,7 @@ class Student extends CI_Controller {
 
 
         if($id){
+            
             if(!empty($this->student_model->profile($id))){
                 $data['profile'] = $this->student_model->profile($id);
                 $data['appointments'] = $this->student_model->appointments($id);
@@ -86,6 +87,7 @@ class Student extends CI_Controller {
                 }
 
 
+                $data['rating_num'] = $this->student_model->rating_num($id);
                 $data['rating'] = $this->student_model->rating($id);
                 $this->load->view('includes/header', $data);
                 $this->load->view('student/profile', $data);

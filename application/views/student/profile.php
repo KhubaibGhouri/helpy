@@ -1,5 +1,10 @@
 <h2 class="text-center"><?php echo $this->session->flashdata('user_loggedin') . $this->session->flashdata('login_failed') . $this->session->flashdata('user_loggedout'); ?></h2>
+<?php
+// echo '<pre>';
+// print_r();
+// echo '</pre>';
 
+?>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 
 <style>
@@ -12,6 +17,17 @@
 
     <h2 class="text-center">Profile</h2>
 
+
+
+  <meta property="og:url"           content="<?= base_url()?>/student/profile/88" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="><?= $profile->first_name . ' ' . $profile->last_name ?>" />
+  <meta property="og:description"   content="<?= $profile->notes ?>" />
+  <meta property="og:image"         content="<?php echo $base_url; ?>/assets/img/logo.png" />
+
+<a href="http://www.facebook.com/sharer.php?u=http://localhost/helpy/student/profile/88" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
 
 <?php
 
@@ -47,18 +63,24 @@ if($pager_id['id'] !== $this->session->userdata('user_id')){
         <th>id</th>
         <th>name</th>
         <th>Email</th>
+        <th>Gen Des.</th>
+        <th>Edu Des.</th>
+        <th>Work Des.</th>
         <th>user_zipcode</th>
         <th>Address</th>
-      <?php if($profile->id_roles == 2) {?>   <th>Rating</th><?php }?>
+      <?php if($profile->id_roles == 2) {?>  <th>Reviews</th> <th>Rating</th><?php }?>
         <th>Action</th>
     </thead>
     <tbody>
         <td><?= $profile->id ?></td>
         <td><?= $profile->first_name . ' ' . $profile->last_name ?></td>
         <td><?= $profile->email ?></td>
+        <td><?= $profile->notes ?></td>
+        <td><?= $profile->education ?></td>
+        <td><?= $profile->work ?></td>
         <td><?= $profile->zip_code ?></td>
         <td><?= $profile->address?></td>
-        <?php if($profile->id_roles == 2) {?><td> <center>  <?= round($rating->avg_rating) ?> </center></td><?php }?>
+        <?php if($profile->id_roles == 2) {?><td><center> <?= $rating_num; ?> </center></td><td> <center>  <?= round($rating->avg_rating) ?> </center></td><?php }?>
         <td>
         <a href="<?= base_url()?>student/update/<?= $profile->id?>">Update Profile</a></td>
     </tbody>
