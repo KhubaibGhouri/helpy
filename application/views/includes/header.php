@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<?php if(isset($profile) && !empty($profile) ) {?>
+<title><?php echo $profile->first_name .' '. $profile->last_name ?> | <?php echo $company_name; ?> </title>
+<?php }else{ ?>
+
     <title><?php echo $company_name; ?> | Easy!Appointments</title>
+<?php } ?>
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <?php if(isset($profile) && !empty($profile) ) {?>
+  <meta property="og:url"           content="<?= base_url()?>/student/profile/<?= $profile->id ?>" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="<?= $profile->first_name . ' ' . $profile->last_name ?>" />
+  <meta property="og:description"   content="<?= $profile->notes ?>" />
+  <meta property="og:image"         content="<?php echo $base_url; ?>/assets/img/logo.png" />
+<?php } ?>
 
     <link rel="icon" type="image/x-icon"
           href="<?php echo $base_url; ?>/assets/img/favicon.ico">
@@ -69,6 +84,8 @@
     	var availableLanguages = <?php echo json_encode($this->config->item('available_languages')); ?>;
     	var EALang = <?php echo json_encode($this->lang->language); ?>;
     </script> -->
+
+
 </head>
 
 <body>
@@ -174,6 +191,10 @@ if($this->session->userdata('role_slug') == 'admin') {
 
 <div id="notification" style="display: none;"></div>
 
+
+<div style="display: none;">
+<img src="<?php echo $base_url; ?>/assets/img/logo.png" alt="<?php echo $company_name; ?>">
+</div>
 <div id="loading" style="display: none;">
     <img src="<?php echo $base_url; ?>/assets/img/loading.gif" />
 </div>

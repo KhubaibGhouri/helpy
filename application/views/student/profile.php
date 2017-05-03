@@ -19,15 +19,11 @@
 
 
 
-  <meta property="og:url"           content="<?= base_url()?>/student/profile/88" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="><?= $profile->first_name . ' ' . $profile->last_name ?>" />
-  <meta property="og:description"   content="<?= $profile->notes ?>" />
-  <meta property="og:image"         content="<?php echo $base_url; ?>/assets/img/logo.png" />
 
-<a href="http://www.facebook.com/sharer.php?u=http://localhost/helpy/student/profile/88" target="_blank">
+
+<!-- <a href="" target="_blank">
         <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-    </a>
+    </a> -->
 
 <?php
 
@@ -82,7 +78,7 @@ if($pager_id['id'] !== $this->session->userdata('user_id')){
         <td><?= $profile->address?></td>
         <?php if($profile->id_roles == 2) {?><td><center> <?= $rating_num; ?> </center></td><td> <center>  <?= round($rating->avg_rating) ?> </center></td><?php }?>
         <td>
-        <a href="<?= base_url()?>student/update/<?= $profile->id?>">Update Profile</a></td>
+        <a href="<?= base_url()?>student/update/<?= $profile->id?>">Update Profile</a> | <a href="http://www.facebook.com/sharer.php?u=<?= base_url() ?>/student/profile/<?= $profile->id  ?>">Share</a></td>
     </tbody>
 </table>
 <?php 

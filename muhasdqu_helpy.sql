@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2017 at 05:41 PM
+-- Generation Time: May 03, 2017 at 10:48 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -121,7 +121,7 @@ CREATE TABLE `ea_services` (
 --
 
 INSERT INTO `ea_services` (`id`, `name`, `duration`, `price`, `currency`, `description`, `availabilities_type`, `attendants_number`, `id_service_categories`) VALUES
-(13, 'Test Service', 30, '50.00', 'Euro', 'This is a test service automatically inserted by the installer.', 'flexible', 1, NULL);
+(13, 'Test Service', 30, '50.00', 'USD because paypal do not MAD', 'This is a test service by the category one', 'flexible', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -153,6 +153,13 @@ CREATE TABLE `ea_service_categories` (
   `name` varchar(256) DEFAULT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ea_service_categories`
+--
+
+INSERT INTO `ea_service_categories` (`id`, `name`, `description`) VALUES
+(1, 'category one', 'here is the category one description');
 
 -- --------------------------------------------------------
 
@@ -349,7 +356,8 @@ CREATE TABLE `rating` (
 
 INSERT INTO `rating` (`rating_id`, `rating_value`, `rating_by`, `rating_to`, `rating_created`) VALUES
 (2, 4, 88, 85, '2017-04-27 15:26:57'),
-(6, 2, 88, 103, '2017-04-27 19:12:59');
+(6, 2, 88, 107, '2017-04-27 19:12:59'),
+(8, 4, 88, 85, '2017-04-27 15:26:57');
 
 -- --------------------------------------------------------
 
@@ -532,7 +540,7 @@ ALTER TABLE `ea_services`
 -- AUTO_INCREMENT for table `ea_service_categories`
 --
 ALTER TABLE `ea_service_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `ea_settings`
 --
@@ -557,7 +565,7 @@ ALTER TABLE `paypal`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `rating_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `rating_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `students`
 --
